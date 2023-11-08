@@ -12,12 +12,22 @@
             <h1>Website</h1>
             <div id="insert"></div>
 
+            <!-- Client Secret Id -->
+            <label for="client_id">Client Id</label>
+            <input type="text" id="input_client_id" name="client_id" size="40" />
+            <br />
             <!-- Client Secret Input -->
             <label for="client_secret">Client Secret</label>
             <input type="text" id="input_client_secret" name="client_secret" size="40" />
 
-            <!-- Client Secret Save Button -->
-            <button id="button_save_client_secret">Save Client Secret</button>
+            <br />
+            <!-- Client (id, secret) Save Button -->
+            <button id="button_save_client">Save Client</button>
+
+            <br />
+            <br />
+            <!-- Start the auth flow -->
+            <button id="button_auth">Auth</button>
         </div>
     </body>
 </html>
