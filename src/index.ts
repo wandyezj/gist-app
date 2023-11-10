@@ -63,7 +63,7 @@ function clickButtonAuth() {
 
     const queryString = new URLSearchParams([
         ["client_id", clientId],
-        ["redirect_uri", redirectUri],
+        //["redirect_uri", redirectUri],
     ]).toString();
 
     window.location.href = `https://github.com/login/oauth/authorize?${queryString}`;
