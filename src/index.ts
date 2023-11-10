@@ -48,6 +48,7 @@ function getClientSecret(): string | undefined {
 // TODO: implement calls to get auth token and use it to get data from the API
 
 function clickButtonAuth() {
+    console.log("clickButtonAuth");
     const clientId = getClientId();
 
     if (!clientId) {
@@ -57,15 +58,19 @@ function clickButtonAuth() {
 
     // TODO: specify redirect URL (these need to be registered in the application)
 
+    const redirectUri = window.location.href;
+    console.log(`redirectUri: ${redirectUri}`);
+
     const queryString = new URLSearchParams([
         ["client_id", clientId],
-        ["redirect_uri", window.location.href],
+        ["redirect_uri", redirectUri],
     ]).toString();
 
     window.location.href = `https://github.com/login/oauth/authorize?${queryString}`;
 }
 
 async function getAccessToken(code: string) {
+    console.log("getAccessToken");
     // TODO: add spinner while waiting for response
 
     const clientId = getClientId();
@@ -114,7 +119,7 @@ function initialize() {
     }
 
     // display previously saved values
-    const clientId = getClientSecret();
+    const clientId = getClientId();
     if (clientId) {
         (document.getElementById(inputClientId) as HTMLInputElement).value = clientId;
     }
