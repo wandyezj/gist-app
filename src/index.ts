@@ -87,8 +87,10 @@ async function getAccessToken(code: string) {
         ["code", code],
     ]).toString();
 
+    const url = `https://github.com/login/oauth/access_token?${queryString}`;
     console.log("fetch");
-    const response = await fetch(`https://github.com/login/oauth/access_token?${queryString}`, {
+    console.log(url);
+    const response = await fetch(url, {
         method: "post",
     });
 

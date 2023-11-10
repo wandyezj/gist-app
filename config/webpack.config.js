@@ -57,6 +57,11 @@ module.exports = async (env, options) => {
                 ],
             }),
         ],
+
+        // Skip Minification in production JavaScript
+        optimization: {
+            minimize: false,
+        },
     };
 
     return config;
